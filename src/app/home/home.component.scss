@@ -87,17 +87,20 @@
   }
 }
 
-
-
 /* Estilos para a seção hero */
-.hero {
-  background-image: url('https://media.oneman.gr/onm-images/sports_betting_c01.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 500px; /* Defina a altura desejada */
-  display: flex;
-  align-items: center;
-}
+
+  .hero {
+    background-image: url('https://media.oneman.gr/onm-images/sports_betting_c01.jpg');
+    background-size: contain; /* Ajusta o tamanho da imagem */
+    background-position: center;
+    height: 395px;
+    display: flex;
+    align-items: center;
+    border: 2px solid #ffffff;
+    border-radius: 5%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
 
 .hero-overlay {
   background-color: rgba(0, 0, 0, 0.6);
