@@ -1,37 +1,76 @@
-<carousel>
-    <slide>
-      <div class="text-center py-5 bg-dark text-white">
-        <h2>First custom content</h2>
-        <div class="lead">
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </div>
-      </div>
-    </slide>
-    <slide>
-      <div class="text-center py-5 bg-dark text-white">
-        <h2>Second custom content</h2>
-        <div class="lead">
-          <h3>Second slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </div>
-      </div>
-    </slide>
-    <slide>
-      <div class="text-center py-5 bg-dark text-white">
-        <h2>Third custom content</h2>
-        <div class="lead">
-          <h3>Third slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum. </p>
-        </div>
-      </div>
-    </slide>
-  </carousel>
 
-  <div>
-    <p>lista-eventos works!</p>
-<p>lista-eventos works!</p>
-<p>lista-eventos works!</p>
-<p>lista-eventos works!</p>
-<p>lista-eventos works!</p>
+<div class="mt-5">
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://img.freepik.com/vetores-gratis/campo-de-futebol-na-tela-do-telefone-inteligente-e-bola-com-holofotes-e-luz-de-brilho-abstrata-no-futebol_433751-55.jpg?w=900&t=st=1685208122~exp=1685208722~hmac=c883e4ed14444251266a9d981252fd16b0f8a52a58ae8d61731b055dbf2a3aeb" class="d-block w-100" alt="Imagem 1">
+        <div class="carousel-caption">
+          <div class="carousel-caption-overlay">
+            <h5 class="text-dark">Bem-vindo ao nosso site de apostas esportivas</h5>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://img.freepik.com/fotos-premium/empresario-confiante-no-centro-do-campo-de-futebol-arrecada-muito-dinheiro-com-o-futebol_207634-4124.jpg" class="d-block w-100" alt="Imagem 2">
+        <div class="carousel-caption">
+          <div class="carousel-caption-overlay">
+            <h5 class="text-dark">Aposte nos seus times favoritos</h5>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://media.moneytimes.com.br/uploads/2022/06/microsoftteams-image-14-1.jpg" class="d-block w-100" alt="Imagem 3">
+        <div class="carousel-caption">
+          <div class="carousel-caption-overlay">
+            <h5 class="text-dark">Ganhe prêmios incríveis</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Próximo</span>
+    </a>
   </div>
+</div>
+
+
+<br/>
+<br/>
+<table class="campeonatos-tabela">
+  <thead>
+    <tr>
+      <th><h2>Ligas do Mundo</h2></th>
+    </tr>
+    <br/>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a routerLink="/resultados" routerLinkActive="active" class="campeonato-link"> Campeonato Brasileiro Série A</a></td>
+    </tr>
+    <tr>
+      <td><a routerLink="/resultados" routerLinkActive="active" class="campeonato-link">Campeonato Espanhol</a></td>
+    </tr>
+    <tr>
+      <td><a routerLink="/resultados" routerLinkActive="active" class="campeonato-link">Campeonato Inglês</a></td>
+    </tr>
+    <!-- Adicione mais linhas <tr> conforme necessário -->
+  </tbody>
+</table>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+

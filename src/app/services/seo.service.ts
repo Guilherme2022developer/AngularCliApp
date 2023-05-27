@@ -29,18 +29,18 @@ export class SeoService{
 
    private setTitle(newTitle: string){
     if(stringUtils.isnullOrEmty(newTitle)){newTitle = "Defina um Titulo"}
-      this.titleService.setTitle(newTitle + " - Eventos.IO");
+      this.titleService.setTitle(newTitle + " - Soccer.IO");
    }
 
    private setMetaDescription(description : string){
     this.metaDescription = this.getOrCreateMetaElement('description');
-    if(stringUtils.isnullOrEmty(description)){description = "Aqui você encontra um evento técnico próximo de você"}
+    if(stringUtils.isnullOrEmty(description)){description = "Aqui você encontra as melhores apostas"}
      this.metaDescription.setAttribute('content', description);
    }
 
    private setMetaKeywords(Keywords: string){
     this.metaKeywords = this.getOrCreateMetaElement('keywords');
-    if(stringUtils.isnullOrEmty(Keywords)){Keywords = "eventos,workshops,encontros,congressos,comunidades,tecnologias"}
+    if(stringUtils.isnullOrEmty(Keywords)){Keywords = "bet365,apostas,bet,mais1.5,betfair,robo de apostas "}
      this.metaKeywords.setAttribute('content', Keywords);
    }
 
