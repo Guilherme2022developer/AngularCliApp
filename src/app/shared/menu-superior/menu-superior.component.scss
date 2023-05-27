@@ -1,0 +1,40 @@
+/* navbar.component.scss */
+
+.navbar {
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .navbar-brand {
+    margin-right: 20px;
+  
+    .logo {
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+  
+  .navbar-links {
+    .nav-link {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 10px;
+      padding: 5px;
+      border-radius: 3px;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: #555;
+      }
+  
+      &.active {
+        background-color: #555;
+      }
+    }
+  }
+  

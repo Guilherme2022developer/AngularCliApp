@@ -1,0 +1,97 @@
+.campeonatos-tabela {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  text-align: center;
+
+  th {
+    padding: 10px;
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+
+  td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+
+    a {
+      display: block;
+      text-decoration: none;
+      color: #333;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #555;
+      }
+
+      &.campeonato-link {
+        font-weight: bold;
+      }
+    }
+  }
+
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+}
+
+
+
+
+.carousel-item img {
+  height: 400px; /* Defina a altura desejada para as imagens */
+  object-fit: cover; /* Ajuste a forma como a imagem é redimensionada dentro do contêiner */
+}
+
+// Personalize as cores do carrossel
+.carousel-indicators li {
+  background-color: #fff; /* Cor do indicador inativo */
+  &.active {
+    background-color: #000000; /* Cor do indicador ativo */
+  }
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #000000; /* Cor das setas de navegação */
+}
+
+// Personalize a posição das setas de navegação
+.carousel-control-prev,
+.carousel-control-next {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-caption-overlay {
+  background-color: rgb(177, 160, 160);
+  padding: 20px;
+  color: #dc3545;
+  font-size: 18px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transform: translate3d(0, 0, 0);
+  border-radius: 10px; /* Adiciona bordas arredondadas */
+  font-family: "Roboto", sans-serif; /* Define a fonte desejada */
+
+  h5 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
