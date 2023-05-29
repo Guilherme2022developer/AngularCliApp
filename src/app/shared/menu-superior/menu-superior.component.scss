@@ -37,4 +37,31 @@
       }
     }
   }
-  
+  .ball {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background-color: black;
+    border-radius: 50%;
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+  }
+
+  &::after {
+    bottom: 0;
+    right: 0;
+  }
+}

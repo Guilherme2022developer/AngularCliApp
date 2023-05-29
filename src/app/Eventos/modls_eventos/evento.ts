@@ -14,6 +14,24 @@ export class Evento {
     organizadorId: string;
 }
 
+export class Team  {
+    id: number;
+    area: string;
+    name: string;
+    shortName: string;
+    tla: string;
+    crestUrl: string;
+    address: string;
+    phone: string;
+    website: string;
+    email: string;
+    founded: number;
+    clubColors: string;
+    venue: string;
+    lastUpdated: Date;
+  }
+  
+
 export class Endereco{
     id: string;
     logradouro: string;
@@ -24,6 +42,12 @@ export class Endereco{
     cidade: string;
     estado: string;
     eventoId: string;
+}
+
+export class Area
+{
+    id: number;
+    name: string;
 }
 
 export interface Categoria{

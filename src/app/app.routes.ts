@@ -16,7 +16,7 @@ export const rootRouterConfig: Routes = [
     {path: 'home', component: HomeComponent},
     {path: 'acesso-negado', component: AcessoNegadoComponent},
     {path: 'nao-encontrado', component: NaoEncontradoComponent},
-    {path: 'eventos', component: ListaEventosComponent},
+    {path: 'brasileiro', component: ListaEventosComponent},
     {path: 'inscricao', component: InscricaoComponent},
     {path: 'entrar', component: LoginComponent},
     {path: 'novo-evento',canActivate:[AuthService], data:[{claim:{nome:' ',valor:' '}}], component: AdicionarEventoComponent},
