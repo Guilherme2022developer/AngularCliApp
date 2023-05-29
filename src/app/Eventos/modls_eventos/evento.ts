@@ -46,6 +46,12 @@ export class Team  {
     Time2: number;
   }
 
+  export class CalculatedProbabilities {
+    probabilityOver15: string;
+    probabilityUnder35: string;
+    probabilityUnder45: string;
+  }
+
 export class Endereco{
     id: string;
     logradouro: string;

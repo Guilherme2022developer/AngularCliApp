@@ -5,14 +5,14 @@ import { SnotifireService } from 'ngx-snotifire';
 import { fromEvent, merge, Observable } from 'rxjs';
 import { EventoService } from 'src/app/services/evento.service';
 import { GenericValidator } from 'src/app/utils/generic.form.validator';
-import { BetInputModel, BetResult, Categoria, Endereco, Evento } from '../modls_eventos/evento';
+import { BetInputModel, BetResult, CalculatedProbabilities, Categoria, Endereco, Evento } from '../modls_eventos/evento';
 import { DateUtils } from 'src/app/utils/data-type-utils';
 
 
 @Component({
   selector: 'app-adicionar-evento',
   templateUrl: './adicionar-evento.component.html',
-  styleUrls: []
+  styleUrls: ['./adicionar-evento.component.scss']
 })
 export class AdicionarEventoComponent implements OnInit, AfterViewInit {
 
@@ -28,6 +28,7 @@ export class AdicionarEventoComponent implements OnInit, AfterViewInit {
   public categorias: Categoria[];
   public gratuito: Boolean;
   public online: Boolean;
+ public calculatedProbabilities: CalculatedProbabilities;
 
   private validationMessages: { [key: string]: { [key: string]: string } };
   private genericValidator: GenericValidator;
@@ -73,10 +74,13 @@ export class AdicionarEventoComponent implements OnInit, AfterViewInit {
   
       this.eventoService.BuscarResult(evento).subscribe(
         result => {
-           // Exibe o resultado no console.log
-          this.betResult = result; // Atribui o resultado à propriedade betResult
+          this.betResult = result;
+          this.calculatedProbabilities = {
+            probabilityOver15: (100 - parseFloat(result.probabilityOver15)).toFixed(2) + '%',
+            probabilityUnder35: (100 - parseFloat(result.probabilityUnder35)).toFixed(2) + '%',
+            probabilityUnder45: (100 - parseFloat(result.probabilityUnder45)).toFixed(2) + '%'
+          };
           this.onSalveComplete(result);
-          console.log(result);
         },
         error => {
           this.onError(error);
@@ -86,11 +90,12 @@ export class AdicionarEventoComponent implements OnInit, AfterViewInit {
   }
   
   
+  
 
   onSalveComplete(response: any){
     this.timesForm.reset();
     this.errors = [];
-    let toasterMessage =  this.snotifireService.success('Opa Deu Certo', 'Sucesso ;)', {
+    let toasterMessage =  this.snotifireService.success('Opa Deu Certo ;)', 'Sucesso', {
       timeout: 2000,
       showProgressBar: true,
       closeOnClick: true,

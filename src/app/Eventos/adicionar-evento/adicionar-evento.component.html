@@ -38,8 +38,17 @@
 </form>
 <br/>
 <br/>
-<div *ngIf="betResult">
-  <div>{{ betResult.team1AverageGoals }}</div>
-  <div>{{ betResult.team2AverageGoals }}</div>
-  <!-- Outras propriedades -->
+<div *ngIf="betResult" class="result-container">
+  <div class="result-item">
+    <span class="result-label">Probability Over 1.5:</span>
+    <span class="result-value">{{ calculatedProbabilities.probabilityOver15 }}</span>
+  </div>
+  <div class="result-item">
+    <span class="result-label">Probability Under 3.5:</span>
+    <span class="result-value">{{ calculatedProbabilities.probabilityUnder35 }}</span>
+  </div>
+  <div class="result-item">
+    <span class="result-label">Probability Under 4.5:</span>
+    <span class="result-value">{{ calculatedProbabilities.probabilityUnder45 }}</span>
+  </div>
 </div>
