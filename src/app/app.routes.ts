@@ -19,7 +19,7 @@ export const rootRouterConfig: Routes = [
     {path: 'brasileiro', component: ListaEventosComponent},
     {path: 'inscricao', component: InscricaoComponent},
     {path: 'entrar', component: LoginComponent},
-    {path: 'novo-evento',canActivate:[AuthService], data:[{claim:{nome:' ',valor:' '}}], component: AdicionarEventoComponent},
+    {path: 'buscar-result', component: AdicionarEventoComponent},
     {path: 'editar-evento/:id',canActivate:[AuthService], data:[{claim:{nome:' ',valor:' '}}], component: EditarEventoComponent},
     {path: 'meus-eventos',canActivate:[AuthService], data:[{claim:{nome:' ',valor:' '}}], component: MeusEventosComponent}
 

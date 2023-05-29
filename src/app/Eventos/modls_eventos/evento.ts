@@ -32,6 +32,20 @@ export class Team  {
   }
   
 
+  export class BetResult {
+    public team1AverageGoals: string;
+    public team2AverageGoals: string;
+    public probabilityOver15: string;
+    public probabilityOver25: string;
+    public probabilityUnder35: string;
+    public probabilityUnder45: string;
+  }
+
+  export class BetInputModel {
+    Time1: number;
+    Time2: number;
+  }
+
 export class Endereco{
     id: string;
     logradouro: string;

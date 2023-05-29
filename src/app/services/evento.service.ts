@@ -1,8 +1,9 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { catchError, map, Observable } from "rxjs";
-import { Categoria, Endereco, Evento, Team } from "../Eventos/modls_eventos/evento";
+import { BetInputModel, BetResult, Categoria, Endereco, Evento, Team } from "../Eventos/modls_eventos/evento";
 import { SeviceBase } from "./sevice.base";
+import { HttpParams,HttpHeaders } from '@angular/common/http';
 
 
 
@@ -34,6 +35,23 @@ export class EventoService extends SeviceBase {
             .post(this.UrlServiceV1 + "evento", evento, super.ObterAuthHeaderJson())
             .pipe(map(super.extractData), catchError(super.seviceError));
     }
+
+    BuscarResult(betInput: BetInputModel): Observable<BetResult> {
+        const url = `https://l5s702t2ci.execute-api.us-east-1.amazonaws.com/Prod/api/Bet/${betInput.Time1}/${betInput.Time2}`;
+      
+        const options = {
+          headers: new HttpHeaders({
+            'Content-Type': 'application/json'
+          })
+        };
+      
+        return this.http.get<BetResult>(url, options)
+          .pipe(catchError(super.seviceError)
+          );
+      }
+      
+      
+      
 
     obterUsuario() {
         const item = localStorage.getItem('eio.user');

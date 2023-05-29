@@ -5,7 +5,7 @@ import { SnotifireService } from 'ngx-snotifire';
 import { fromEvent, merge, Observable } from 'rxjs';
 import { EventoService } from 'src/app/services/evento.service';
 import { GenericValidator } from 'src/app/utils/generic.form.validator';
-import { Categoria, Endereco, Evento } from '../modls_eventos/evento';
+import { BetInputModel, BetResult, Categoria, Endereco, Evento } from '../modls_eventos/evento';
 import { DateUtils } from 'src/app/utils/data-type-utils';
 
 
@@ -20,9 +20,11 @@ export class AdicionarEventoComponent implements OnInit, AfterViewInit {
 
   public myDatePickerOptions = DateUtils.getMyDatePickerOptions();
 
-  public eventoForm: FormGroup;
+  public timesForm: FormGroup;
   public errors: any[] = [];
+  public betResult: BetResult;
   public evento: Evento;
+  public times: BetInputModel;
   public categorias: Categoria[];
   public gratuito: Boolean;
   public online: Boolean;
@@ -33,59 +35,24 @@ export class AdicionarEventoComponent implements OnInit, AfterViewInit {
 
   constructor(private fb: FormBuilder, private router: Router, private snotifireService: SnotifireService, private eventoService : EventoService) {
     this.validationMessages = {
-      nome: {
+      time1: {
         require: 'O Nome é requirido',
-        minlength: 'O Nome precisa ter no mínimo 2 caracteres',
-        maxlength: 'O Nome precisa ter no máximo 150 caracteres'
       },
-      dataInicio: {
-        require: 'O dataInicio é requirido',
-      },
-      dataFim: {
-        require: 'O dataFim é requirido',
-
-
-      },
-      organizadorId: {
-        require: 'O organizador é requirido',
+      time2: {
+        require: 'O time1 é requirido',
       }
     }
     this.genericValidator = new GenericValidator(this.validationMessages);
     this.evento = new Evento();
+    this.times = new BetInputModel();
     this.evento.endereco = new Endereco();
   }
 
   ngOnInit() {
-    this.eventoForm = this.fb.group({
-      nome: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(150)]],
-      // cpf: ['', [Validators.required, Validators.minLength(11), Validators.maxLength(11)]],
-      organizadorId: ['', [Validators.required]],
-      decricaoCurta: [''],
-      descricaolonga: [''],
-      dataInicio: ['', [Validators.required]],
-      datafim: ['', [Validators.required]],
-      gratuito: [''],
-      valor: ['0'],
-      online: [''],
-      nomeEmpresa: [''],
-      logradouro: [''],
-      numero: [''],
-      complemento: [''],
-      bairro: [''],
-      cidade: [''],
-      estado: [''],
-      cep: [''],
-      Token: [],
-      role: []
-
+    this.timesForm = this.fb.group({
+      time1: ['', [Validators.required]],
+      time2: ['', [Validators.required]],
     });
-
-    this.eventoService.ObterCategoria()
-    .subscribe(
-      categorias => this.categorias = categorias,
-      error => this.errors = error
-      
-    );
   }
 
 
@@ -93,37 +60,37 @@ export class AdicionarEventoComponent implements OnInit, AfterViewInit {
     let controlBlurs: Observable<any>[] = this.formInputElements.map((formControl: ElementRef) => fromEvent(formControl.nativeElement, 'blur'));
 
     merge(...controlBlurs).subscribe(value => {
-      this.displayMessage = this.genericValidator.processMessages(this.eventoForm);
+      this.displayMessage = this.genericValidator.processMessages(this.timesForm);
     });
   }
 
   adicionarEvento() {
-    if (this, this.eventoForm.valid && this.eventoForm.dirty) {
-
-      const e = Object.assign({}, this.eventoForm, this.eventoForm.value);
-      let user = this.eventoService.obterUsuario();
-      e.dataInicio = DateUtils.getMyDatePickerDate(e.dataInicio);
-      e.dataFim = DateUtils.getMyDatePickerDate(e.dataFim);
-      e.organizadorId = user.Id;
-      e.endereco.logradouro = e.logradouro;
-      e.endereco.numero = e.numero;
-      e.endereco.complemento = e.complemento;
-      e.endereco.bairro = e.bairro;
-      e.endereco.cep = e.cep;
-      e.endereco.cidade = e.cidade;
-      e.endereco.estado = e.estado;
-
-      this.eventoService.registrarEvento(e).subscribe(
-        result => {this.onSalveComplete},
-        fail => {this.onError(fail)}
+    if (this.timesForm.valid && this.timesForm.dirty) {
+      const evento: BetInputModel = {
+        Time1: this.timesForm.value.time1,
+        Time2: this.timesForm.value.time2
+      };
+  
+      this.eventoService.BuscarResult(evento).subscribe(
+        result => {
+           // Exibe o resultado no console.log
+          this.betResult = result; // Atribui o resultado à propriedade betResult
+          this.onSalveComplete(result);
+          console.log(result);
+        },
+        error => {
+          this.onError(error);
+        }
       );
     }
   }
+  
+  
 
   onSalveComplete(response: any){
-    this.eventoForm.reset();
+    this.timesForm.reset();
     this.errors = [];
-    let toasterMessage =  this.snotifireService.success('Registro realizado com Sucesso!', 'Bem vindo', {
+    let toasterMessage =  this.snotifireService.success('Opa Deu Certo', 'Sucesso ;)', {
       timeout: 2000,
       showProgressBar: true,
       closeOnClick: true,
@@ -132,8 +99,10 @@ export class AdicionarEventoComponent implements OnInit, AfterViewInit {
 
     if(toasterMessage){
       toasterMessage.eventEmitter.subscribe(()=>{
-        this.router.navigate(['/lista-eventos']);
-      });
+        
+      }
+      
+      );
     }
     
   }
