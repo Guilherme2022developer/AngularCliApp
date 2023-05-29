@@ -101,6 +101,47 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 
+  .hero2 {
+    background-image: url('https://jhnoticias.com.br/wp-content/uploads/2020/12/O-mundo-das-apostas-de-futebol-te-espera-%E2%80%93-Veja-como-se-cadastrar-numa-casa-de-apostas-esportivas.jpg');
+    background-size: contain; /* Ajusta o tamanho da imagem */
+    background-position: center;
+    height: 395px;
+    display: flex;
+    align-items: center;
+    border: 2px solid #ffffff;
+    border-radius: 1%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  .hero-overlay2 {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+    border-radius: 8px; /* Adiciona borda arredondada */
+  }
+
+  .hero3 {
+    background-image: url('https://assets-mantosdofutebol.sfo2.digitaloceanspaces.com/wp-content/uploads/2020/10/apostas-esportivas-futebol.jpg');
+    background-size: contain; /* Ajusta o tamanho da imagem */
+    background-position: center;
+    height: 395px;
+    display: flex;
+    align-items: center;
+    border: 2px solid #ffffff;
+    border-radius: 1%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  .hero-overlay3 {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+    border-radius: 8px; /* Adiciona borda arredondada */
+  }
 
 .hero-overlay {
   background-color: rgba(0, 0, 0, 0.6);
