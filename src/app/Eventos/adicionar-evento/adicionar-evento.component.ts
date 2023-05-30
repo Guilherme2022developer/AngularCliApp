@@ -83,15 +83,15 @@ export class AdicionarEventoComponent implements OnInit, AfterViewInit {
 
           this.betResult = result;
           this.calculatedProbabilities = {
-            probabilityOver15: (parseFloat(result.probabilityOver15)).toFixed(2) + '%',
-            probabilityOver25: (parseFloat(result.probabilityOver25)).toFixed(2) + '%',
-            probabilityUnder35: (100 - parseFloat(result.probabilityOver35)).toFixed(2) + '%',
-            probabilityUnder45: (100 - parseFloat(result.probabilityOver45)).toFixed(2) + '%',
-            probabilityUnder15: (100 - parseFloat(result.probabilityOver15)).toFixed(2) + '%',
+            probabilityOver15: (100 - parseFloat(result.probabilityOver15)).toFixed(2) + '%',
+            probabilityOver25: (100 - parseFloat(result.probabilityOver25)).toFixed(2) + '%',
+            probabilityUnder35: (100 - parseFloat(result.probabilityUnder35)).toFixed(2) + '%',
+            probabilityUnder45: (100 - parseFloat(result.probabilityUnder45)).toFixed(2) + '%',
+            probabilityUnder15: (100 - parseFloat(result.probabilityUnder15)).toFixed(2) + '%',
             probabilityOver05: (parseFloat(result.probabilityOver05)).toFixed(2) + '%',
-            probabilityOver35: (parseFloat(result.probabilityOver35)).toFixed(2) + '%',
-            probabilityOver45: (parseFloat(result.probabilityOver45)).toFixed(2) + '%',
-            probabilityUnder25: (100 - parseFloat(result.probabilityOver25)).toFixed(2) + '%'
+            probabilityOver35: (100 - parseFloat(result.probabilityOver35)).toFixed(2) + '%',
+            probabilityOver45: (100 - parseFloat(result.probabilityOver45)).toFixed(2) + '%',
+            probabilityUnder25: (100 - parseFloat(result.probabilityUnder25)).toFixed(2) + '%'
           };
           this.onSalveComplete(result);
         },
