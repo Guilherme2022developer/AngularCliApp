@@ -2,8 +2,18 @@ table {
     border-collapse: collapse;
     width: 100%;
     font-family: Arial, sans-serif;
+ 
 }
 
+.main-container{
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  overflow: hidden;
+  min-height: 350px;
+
+}
 th {
     background-color: #333;
     color: #fff;

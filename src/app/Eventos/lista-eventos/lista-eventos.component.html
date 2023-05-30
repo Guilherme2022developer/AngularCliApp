@@ -1,9 +1,7 @@
-
+<div class="main-container body-content" >
 <div class="login" *ngIf="isLoading">Carregando...</div>
-<br/>
-<div *ngIf="!isLoading">
 
-    <br>
+<div  *ngIf="!isLoading">
     <br>
     <a [routerLink]="['/buscar-result']" class="btn btn-primary">Buscar probalidade</a>
     <body>
@@ -33,4 +31,5 @@
         </table>
     </body>
     <br>
+</div>
 </div>
