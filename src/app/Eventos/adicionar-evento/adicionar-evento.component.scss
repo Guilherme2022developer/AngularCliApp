@@ -17,4 +17,27 @@
   .result-value {
     color: #333;
   }
-  
+
+  .login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #333333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .login::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    border-color: #ffffff transparent #ffffff transparent;
+    animation: spin 1s linear infinite;
+  }

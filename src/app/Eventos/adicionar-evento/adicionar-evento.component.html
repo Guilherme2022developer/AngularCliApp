@@ -18,7 +18,7 @@
         </span>
       </div>
     </div>
-
+    <div class="login" *ngIf="isLoading">Carregando...</div>
     <div class="form-group" [ngClass]="{'has-error': displayMessage['nome']}">
       <label class="col-md-2 control-label" for="time2">Time 2</label>
       <div class="col-md-10">
@@ -38,10 +38,18 @@
 </form>
 <br/>
 <br/>
+
+
+
+<div *ngIf="!isLoading">
 <div *ngIf="betResult" class="result-container">
   <div class="result-item">
     <span class="result-label">Probability Over 1.5:</span>
     <span class="result-value">{{ calculatedProbabilities.probabilityOver15 }}</span>
+  </div>
+  <div class="result-item">
+    <span class="result-label">Probability Over 2.5:</span>
+    <span class="result-value">{{ calculatedProbabilities.probabilityOver25 }}</span>
   </div>
   <div class="result-item">
     <span class="result-label">Probability Under 3.5:</span>
@@ -51,4 +59,25 @@
     <span class="result-label">Probability Under 4.5:</span>
     <span class="result-value">{{ calculatedProbabilities.probabilityUnder45 }}</span>
   </div>
+  <div class="result-item">
+    <span class="result-label">Probability Under 1.5:</span>
+    <span class="result-value">{{ calculatedProbabilities.probabilityUnder15 }}</span>
+  </div>
+  <div class="result-item">
+    <span class="result-label">Probability Over 0.5:</span>
+    <span class="result-value">{{ calculatedProbabilities.probabilityOver05 }}</span>
+  </div>
+  <div class="result-item">
+    <span class="result-label">Probability Over 3.5:</span>
+    <span class="result-value">{{ calculatedProbabilities.probabilityOver35 }}</span>
+  </div>
+  <div class="result-item">
+    <span class="result-label">Probability Over 4.5:</span>
+    <span class="result-value">{{ calculatedProbabilities.probabilityOver45 }}</span>
+  </div>
+  <div class="result-item">
+    <span class="result-label">Probability Under 2.5:</span>
+    <span class="result-value">{{ calculatedProbabilities.probabilityUnder25 }}</span>
+  </div>
+</div>
 </div>

@@ -42,7 +42,7 @@ async ngOnInit() {
         teams => {
           this.teamsNg = teams;
           this.isLoading = false; // Define isLoading como false para indicar que a página terminou de carregar
-          console.log(this.teamsNg); // Adicione o console.log aqui
+          //console.log(this.teamsNg); // Adicione o console.log aqui
         },
         error => {
           this.errorMessage = error;

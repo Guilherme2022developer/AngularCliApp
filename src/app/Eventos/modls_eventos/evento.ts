@@ -39,6 +39,12 @@ export class Team  {
     public probabilityOver25: string;
     public probabilityUnder35: string;
     public probabilityUnder45: string;
+
+    public probabilityUnder15: string;
+    public probabilityUnder25: string;
+    public probabilityOver05: string;
+    public probabilityOver35: string;
+    public probabilityOver45: string;
   }
 
   export class BetInputModel {
@@ -48,8 +54,16 @@ export class Team  {
 
   export class CalculatedProbabilities {
     probabilityOver15: string;
+    probabilityOver25: string;
     probabilityUnder35: string;
     probabilityUnder45: string;
+
+
+    probabilityUnder15: string;
+    probabilityUnder25: string;
+    probabilityOver05: string;
+    probabilityOver35: string;
+    probabilityOver45: string;
   }
 
 export class Endereco{

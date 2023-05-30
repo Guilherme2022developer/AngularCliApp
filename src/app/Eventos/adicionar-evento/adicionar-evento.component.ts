@@ -28,6 +28,7 @@ export class AdicionarEventoComponent implements OnInit, AfterViewInit {
   public categorias: Categoria[];
   public gratuito: Boolean;
   public online: Boolean;
+  isLoading: boolean = false;
  public calculatedProbabilities: CalculatedProbabilities;
 
   private validationMessages: { [key: string]: { [key: string]: string } };
@@ -66,6 +67,7 @@ export class AdicionarEventoComponent implements OnInit, AfterViewInit {
   }
 
   adicionarEvento() {
+    this.isLoading = true;
     if (this.timesForm.valid && this.timesForm.dirty) {
       const evento: BetInputModel = {
         Time1: this.timesForm.value.time1,
@@ -77,13 +79,21 @@ export class AdicionarEventoComponent implements OnInit, AfterViewInit {
           this.betResult = result;
           this.calculatedProbabilities = {
             probabilityOver15: (100 - parseFloat(result.probabilityOver15)).toFixed(2) + '%',
+            probabilityOver25: (100 - parseFloat(result.probabilityOver25)).toFixed(2) + '%',
             probabilityUnder35: (100 - parseFloat(result.probabilityUnder35)).toFixed(2) + '%',
-            probabilityUnder45: (100 - parseFloat(result.probabilityUnder45)).toFixed(2) + '%'
+            probabilityUnder45: (100 - parseFloat(result.probabilityUnder45)).toFixed(2) + '%',
+            probabilityUnder15: (100 - parseFloat(result.probabilityUnder15)).toFixed(2) + '%',
+            probabilityUnder25: (100 - parseFloat(result.probabilityUnder25)).toFixed(2) + '%',
+            probabilityOver05: (100 - parseFloat(result.probabilityOver05)).toFixed(2) + '%',
+            probabilityOver35: (100 - parseFloat(result.probabilityOver35)).toFixed(2) + '%',
+            probabilityOver45: (100 - parseFloat(result.probabilityOver45)).toFixed(2) + '%'
           };
+          this.isLoading = false; // Define isLoading como false para indicar que a página terminou de carregar
           this.onSalveComplete(result);
         },
         error => {
           this.onError(error);
+          this.isLoading = false; // Define isLoading como false mesmo em caso de erro
         }
       );
     }
