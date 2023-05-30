@@ -1,22 +1,17 @@
-<div class="mt-5 login" *ngIf="isLoading">Carregando...</div>
 
+<div class="login" *ngIf="isLoading">Carregando...</div>
+<br/>
 <div *ngIf="!isLoading">
 
-    <div class="row">
-        <div class="col-md-12">
-            <div class="pull-left">
-
-            </div>
-        </div>
-    </div>
+    <br>
     <br>
     <a [routerLink]="['/buscar-result']" class="btn btn-primary">Buscar probalidade</a>
     <body>
         <table>
             <tr>
                 <th style="text-align: center; vertical-align: middle;">Escudo</th>
-                <th>Nome</th>
-                <th>ID</th>
+                <th>Nome da Equipe</th>
+                <th>Código da Equipe</th>
                 <th></th>
             </tr>
             <tr *ngFor="let team of teamsNg">
