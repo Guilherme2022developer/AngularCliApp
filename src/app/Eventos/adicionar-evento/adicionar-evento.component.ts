@@ -87,7 +87,7 @@ export class AdicionarEventoComponent implements OnInit, AfterViewInit {
             probabilityOver25: (parseFloat(result.probabilityOver25)).toFixed(2) + '%',
             probabilityUnder35: (100 - parseFloat(result.probabilityUnder35)).toFixed(2) + '%',
             probabilityUnder45: (100 - parseFloat(result.probabilityUnder45)).toFixed(2) + '%',
-            probabilityUnder15: (100 - parseFloat(result.probabilityUnder15)).toFixed(2) + '%',
+            probabilityUnder15: (parseFloat(result.probabilityUnder15)).toFixed(2) + '%',
             probabilityOver05: (parseFloat(result.probabilityOver05)).toFixed(2) + '%',
             probabilityOver35: (100 - parseFloat(result.probabilityOver35)).toFixed(2) + '%',
             probabilityOver45: (100 - parseFloat(result.probabilityOver45)).toFixed(2) + '%',
